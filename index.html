@@ -1,0 +1,157 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+
+    <script src="./script.js"></script>
+</head>
+<body>
+    <h1>CCE 3rd Semester GPA Calculator</h1>
+    <table>
+        <thead><th>Subject Code</th><th>Grade</th></thead>
+        <tr>
+            <td>CD3281</td>
+            <td>
+                <select name="" id="CD3281">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>CD3291</td>
+            <td>
+                <select name="" id="CD3291">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>CS3351</td>
+            <td>
+                <select name="" id="CS3351">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>CS3352</td>
+            <td>
+                <select name="" id="CS3352">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>CS3361</td>
+            <td>
+                <select name="" id="CS3361">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>EC3354</td>
+            <td>
+                <select name="" id="EC3354">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>GE3361</td>
+            <td>
+                <select name="" id="GE3361">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>MA3354</td>
+            <td>
+                <select name="" id="MA3354">
+                    <option value="10">O</option>
+                    <option value="9">A+</option>
+                    <option value="8">A</option>
+                    <option value="7">B+</option>
+                    <option value="6">B</option>
+                    <option value="5">C</option>
+                    <option value="0">U</option>
+                </select>
+            </td>
+        </tr>
+
+    </table>
+
+    <button onclick="calculateGPA()">Calculate</button>
+
+    <p id="result"></p>
+    <a href="#" onclick="getGPA()" id="CGPA" style="display: none;">Click Here To Calculate CGPA</a>
+    <table id="GPAInput" style="display:none;">
+        <tr>
+            <td><label for="1st Sem GPA">Enter Your 1st Sem GPA </label></td>
+            <td><input type="number" min="0" max="10" id="GPA1"></td>
+        </tr>
+        <tr>
+            <td><label for="2nd Sem GPA">Enter Your 2nd Sem GPA </label></td>
+            <td><input type="number" max="10" min="0" id="GPA2"></td>
+        </tr>
+        <tr>
+            <td><label for="3rd Sem GPA">Enter Your 3rd Sem GPA </label> </td>
+            <td><input type="number" min="0" max="10" id="GPA3"></td>
+        </tr>
+        <tr><td><button onclick="calculateCGPA()">Calculate</button></td></tr>
+    </table>
+    <p id="printCGPA"></p>
+</body>
+</html>
