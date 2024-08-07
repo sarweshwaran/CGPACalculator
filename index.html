@@ -56,10 +56,22 @@
 </head>
 <body>
 
-<h2>Select Grades for 7 Subjects (5th Semester):</h2>
+<h2>Select Grades for 8 Subjects (6th Semester):</h2>
 <form id="gradeForm">
-  <label for="DSP">DSP (4 credits):</label>
-<select id="DSP" name="DSP" required>
+  <label for="SS">SS (3 credits):</label>
+<select id="SS" name="SS" required>
+  <option value="">Select Grade</option>
+  <option value="O" data-credit="3">O</option>
+  <option value="A+" data-credit="3">A+</option>
+  <option value="A" data-credit="3">A</option>
+  <option value="B+" data-credit="3">B+</option>
+  <option value="B" data-credit="3">B</option>
+  <option value="C" data-credit="3">C</option>
+  <option value="RA" data-credit="3">RA</option>
+</select><br><br>
+
+<label for="IOT">IOT (4 credits):</label>
+<select id="IOT" name="IOT" required>
   <option value="">Select Grade</option>
   <option value="O" data-credit="4">O</option>
   <option value="A+" data-credit="4">A+</option>
@@ -70,8 +82,8 @@
   <option value="RA" data-credit="4">RA</option>
 </select><br><br>
 
-<label for="CN">CN (4 credits):</label>
-<select id="CN" name="CN" required>
+<label for="OOSE">OOSE (4 credits):</label>
+<select id="OOSE" name="OOSE" required>
   <option value="">Select Grade</option>
   <option value="O" data-credit="4">O</option>
   <option value="A+" data-credit="4">A+</option>
@@ -82,8 +94,8 @@
   <option value="RA" data-credit="4">RA</option>
 </select><br><br>
 
-<label for="BA">BA (3 credits):</label>
-<select id="BA" name="BA" required>
+<label for="NS">NS (3 credits):</label>
+<select id="NS" name="NS" required>
   <option value="">Select Grade</option>
   <option value="O" data-credit="3">O</option>
   <option value="A+" data-credit="3">A+</option>
@@ -94,8 +106,8 @@
   <option value="RA" data-credit="3">RA</option>
 </select><br><br>
 
-<label for="SC">SC (3 credits):</label>
-<select id="SC" name="SC" required>
+<label for="IVA">IVA (3 credits):</label>
+<select id="IVA" name="IVA" required>
   <option value="">Select Grade</option>
   <option value="O" data-credit="3">O</option>
   <option value="A+" data-credit="3">A+</option>
@@ -106,8 +118,8 @@
   <option value="RA" data-credit="3">RA</option>
 </select><br><br>
 
-<label for="CCS">CCS (3 credits):</label>
-<select id="CCS" name="CCS" required>
+<label for="DW">DW (3 credits):</label>
+<select id="DW" name="DW" required>
   <option value="">Select Grade</option>
   <option value="O" data-credit="3">O</option>
   <option value="A+" data-credit="3">A+</option>
@@ -118,8 +130,8 @@
   <option value="RA" data-credit="3">RA</option>
 </select><br><br>
 
-<label for="DC">DC (3 credits):</label>
-<select id="DC" name="DC" required>
+<label for="CC">CC (3 credits):</label>
+<select id="CC" name="CC" required>
   <option value="">Select Grade</option>
   <option value="O" data-credit="3">O</option>
   <option value="A+" data-credit="3">A+</option>
@@ -128,28 +140,16 @@
   <option value="B" data-credit="3">B</option>
   <option value="C" data-credit="3">C</option>
   <option value="RA" data-credit="3">RA</option>
-</select><br><br>
-
-<label for="MAD">MAD (1.5 credits):</label>
-<select id="MAD" name="MAD" required>
-  <option value="">Select Grade</option>
-  <option value="O" data-credit="1.5">O</option>
-  <option value="A+" data-credit="1.5">A+</option>
-  <option value="A" data-credit="1.5">A</option>
-  <option value="B+" data-credit="1.5">B+</option>
-  <option value="B" data-credit="1.5">B</option>
-  <option value="C" data-credit="1.5">C</option>
-  <option value="RA" data-credit="1.5">RA</option>
 </select><br><br>
 
 
   <button type="button" onclick="calculateGPA()">Calculate GPA</button>
 </form>
 
-<h2>Enter 4th Semester CGPA (Optional):</h2>
+<h2>Enter 5th Semester CGPA (Optional):</h2>
 <form id="cgpaForm">
-  <label for="fourthCGPA">4th Semester CGPA:</label>
-  <input type="number" id="fourthCGPA" name="fourthCGPA" step="0.01" min="0" max="10"><br><br>
+  <label for="fifthCGPA">5th Semester CGPA:</label>
+  <input type="number" id="fifthCGPA" name="fifthCGPA" step="0.01" min="0" max="10"><br><br>
 
   <button type="button" onclick="calculateCGPA()">Calculate CGPA</button>
 </form>
@@ -211,19 +211,19 @@ function calculateGPA() {
 }
 
 function calculateCGPA() {
-  const fourthSemesterCGPA = parseFloat(document.getElementById('fourthCGPA').value);
-  const fifthSemesterGPA = calculateGPA();
+  const fifthSemesterCGPA = parseFloat(document.getElementById('fifthCGPA').value);
+  const sixthSemesterGPA = calculateGPA();
 
-  if(isNaN(fifthSemesterGPA)) {
+  if(isNaN(sixthSemesterGPA)) {
     alert("Please select grades for all subjects before calculating CGPA.");
     return;
   }
 
-  const totalCreditsUpToFourthSemester = 89.5;
-  const totalCredits = 21.5;
-  const totalCreditsIncludingFifthSemester = totalCredits + totalCreditsUpToFourthSemester;
-  const cumulativeGradePoints = (fourthSemesterCGPA * totalCreditsUpToFourthSemester) + (fifthSemesterGPA * totalCredits);
-  const cgpa = cumulativeGradePoints / totalCreditsIncludingFifthSemester;
+  const totalCreditsUpToFifthSemester = 111;
+  const totalCredits = 23;
+  const totalCreditsIncludingSixthSemester = totalCredits + totalCreditsUpToFifthSemester;
+  const cumulativeGradePoints = (fifthSemesterCGPA * totalCreditsUpToFifthSemester) + (sixthSemesterGPA * totalCredits);
+  const cgpa = cumulativeGradePoints / totalCreditsIncludingSixthSemester;
 
   document.getElementById('cgpa').innerHTML = "Your CGPA is: " + cgpa.toFixed(2);
 }
