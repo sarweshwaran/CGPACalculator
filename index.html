@@ -58,8 +58,8 @@
 
 <h2>Select Grades for 8 Subjects (6th Semester):</h2>
 <form id="gradeForm">
-  <label for="SS">SS (3 credits):</label>
-<select id="SS" name="SS" required>
+  <label for="SS">ITAS (3 credits):</label>
+<select id="ITAS" name="ITAS" required>
   <option value="">Select Grade</option>
   <option value="O" data-credit="3">O</option>
   <option value="A+" data-credit="3">A+</option>
@@ -70,32 +70,8 @@
   <option value="RA" data-credit="3">RA</option>
 </select><br><br>
 
-<label for="IOT">IOT (4 credits):</label>
-<select id="IOT" name="IOT" required>
-  <option value="">Select Grade</option>
-  <option value="O" data-credit="4">O</option>
-  <option value="A+" data-credit="4">A+</option>
-  <option value="A" data-credit="4">A</option>
-  <option value="B+" data-credit="4">B+</option>
-  <option value="B" data-credit="4">B</option>
-  <option value="C" data-credit="4">C</option>
-  <option value="RA" data-credit="4">RA</option>
-</select><br><br>
-
-<label for="OOSE">OOSE (4 credits):</label>
-<select id="OOSE" name="OOSE" required>
-  <option value="">Select Grade</option>
-  <option value="O" data-credit="4">O</option>
-  <option value="A+" data-credit="4">A+</option>
-  <option value="A" data-credit="4">A</option>
-  <option value="B+" data-credit="4">B+</option>
-  <option value="B" data-credit="4">B</option>
-  <option value="C" data-credit="4">C</option>
-  <option value="RA" data-credit="4">RA</option>
-</select><br><br>
-
-<label for="NS">NS (3 credits):</label>
-<select id="NS" name="NS" required>
+<label for="TQM">TQM (3 credits):</label>
+<select id="TQM" name="TQM" required>
   <option value="">Select Grade</option>
   <option value="O" data-credit="3">O</option>
   <option value="A+" data-credit="3">A+</option>
@@ -106,8 +82,20 @@
   <option value="RA" data-credit="3">RA</option>
 </select><br><br>
 
-<label for="IVA">IVA (3 credits):</label>
-<select id="IVA" name="IVA" required>
+<label for="HVE">HVE (2 credits):</label>
+<select id="HVE" name="HVE" required>
+  <option value="">Select Grade</option>
+  <option value="O" data-credit="2">O</option>
+  <option value="A+" data-credit="2">A+</option>
+  <option value="A" data-credit="2">A</option>
+  <option value="B+" data-credit="2">B+</option>
+  <option value="B" data-credit="2">B</option>
+  <option value="C" data-credit="2">C</option>
+  <option value="RA" data-credit="2">RA</option>
+</select><br><br>
+
+<label for="AED">AED (3 credits):</label>
+<select id="AED" name="AED" required>
   <option value="">Select Grade</option>
   <option value="O" data-credit="3">O</option>
   <option value="A+" data-credit="3">A+</option>
@@ -118,8 +106,8 @@
   <option value="RA" data-credit="3">RA</option>
 </select><br><br>
 
-<label for="DW">DW (3 credits):</label>
-<select id="DW" name="DW" required>
+<label for="FR">FR (3 credits):</label>
+<select id="FR" name="FR" required>
   <option value="">Select Grade</option>
   <option value="O" data-credit="3">O</option>
   <option value="A+" data-credit="3">A+</option>
@@ -130,16 +118,16 @@
   <option value="RA" data-credit="3">RA</option>
 </select><br><br>
 
-<label for="CC">CC (3 credits):</label>
-<select id="CC" name="CC" required>
+<label for="INTERNSHIP">INTERNSHIP (2 credits):</label>
+<select id="INTERNSHIP" name="INTERNSHIP" required>
   <option value="">Select Grade</option>
-  <option value="O" data-credit="3">O</option>
-  <option value="A+" data-credit="3">A+</option>
-  <option value="A" data-credit="3">A</option>
-  <option value="B+" data-credit="3">B+</option>
-  <option value="B" data-credit="3">B</option>
-  <option value="C" data-credit="3">C</option>
-  <option value="RA" data-credit="3">RA</option>
+  <option value="O" data-credit="2">O</option>
+  <option value="A+" data-credit="2">A+</option>
+  <option value="A" data-credit="2">A</option>
+  <option value="B+" data-credit="2">B+</option>
+  <option value="B" data-credit="2">B</option>
+  <option value="C" data-credit="2">C</option>
+  <option value="RA" data-credit="2">RA</option>
 </select><br><br>
 
 
@@ -148,8 +136,8 @@
 
 <h2>Enter 5th Semester CGPA (Optional):</h2>
 <form id="cgpaForm">
-  <label for="fifthCGPA">5th Semester CGPA:</label>
-  <input type="number" id="fifthCGPA" name="fifthCGPA" step="0.01" min="0" max="10"><br><br>
+  <label for="fifthCGPA">6th Semester CGPA:</label>
+  <input type="number" id="sixthCGPA" name="sixthCGPA" step="0.01" min="0" max="10"><br><br>
 
   <button type="button" onclick="calculateCGPA()">Calculate CGPA</button>
 </form>
@@ -211,19 +199,19 @@ function calculateGPA() {
 }
 
 function calculateCGPA() {
-  const fifthSemesterCGPA = parseFloat(document.getElementById('fifthCGPA').value);
-  const sixthSemesterGPA = calculateGPA();
+  const sixthSemesterCGPA = parseFloat(document.getElementById('sixthCGPA').value);
+  const seventhSemesterGPA = calculateGPA();
 
-  if(isNaN(sixthSemesterGPA)) {
+  if(isNaN(seventhSemesterGPA)) {
     alert("Please select grades for all subjects before calculating CGPA.");
     return;
   }
 
-  const totalCreditsUpToFifthSemester = 111;
-  const totalCredits = 23;
-  const totalCreditsIncludingSixthSemester = totalCredits + totalCreditsUpToFifthSemester;
-  const cumulativeGradePoints = (fifthSemesterCGPA * totalCreditsUpToFifthSemester) + (sixthSemesterGPA * totalCredits);
-  const cgpa = cumulativeGradePoints / totalCreditsIncludingSixthSemester;
+  const totalCreditsUpToSixthSemester = 134;
+  const totalCredits = 16;
+  const totalCreditsIncludingSeventhSemester = totalCredits + totalCreditsUpToSixthSemester;
+  const cumulativeGradePoints = (sixthSemesterCGPA * totalCreditsUpToSixthSemester) + (seventhSemesterGPA * totalCredits);
+  const cgpa = cumulativeGradePoints / totalCreditsIncludingSeventhSemester;
 
   document.getElementById('cgpa').innerHTML = "Your CGPA is: " + cgpa.toFixed(2);
 }
